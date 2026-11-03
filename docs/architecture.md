@@ -11,7 +11,7 @@ This is a working support-workflow prototype with synthetic emails, a small attr
 | Knowledge & review guide (`/legacy`) | Inspect three curated articles, review principles, practice records and optional earlier rules practice. | Hosted practice records remain in the current browser and are separate from live records. |
 | Owner live workspace (`/live`, hosted runtime) | Process synthetic conversations with a real model and a bounded allowance. | Requires trusted authenticated identity, an authorized operator and the operator's own server-side configuration. Records use namespaced D1 storage. |
 
-No personal deployment is configured in this release. A future operator provisions their own hosting identity, storage, secrets and usage authorization.
+The README links to the demonstration website. No hosting identity, runtime secret or active allowance is bundled in this source snapshot. Anyone deploying a separate copy provisions their own identity, storage, secrets and usage authorization.
 
 ## Processing flow
 

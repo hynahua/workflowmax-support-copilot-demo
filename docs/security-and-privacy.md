@@ -2,7 +2,7 @@
 
 ## Public source does not grant model access
 
-This release contains no publisher API key, personal deployment URL or active publisher allowance. Reading the code, diagrams or static training examples does not call a model. Running browser rules practice does not use a provider key. Anyone who chooses to operate live inference must supply their own server-side credentials and explicit usage authorization.
+This release includes links to the demonstration website, but contains no publisher API key, owner login or active allowance configuration. Reading the code, diagrams or static training examples does not call a model. Running browser rules practice does not use a provider key. Anyone who chooses to operate live inference must supply their own server-side credentials and explicit usage authorization.
 
 In the hosted Worker, public page access and paid API access are separate. Protected routes reject missing authenticated identity and reject a signed-in identity that does not match the configured operator. The key stays on the server. A public repository or public landing page does not remove these checks.
 
@@ -14,7 +14,7 @@ State-changing cloud requests also require same-origin JSON, bounded input and t
 
 ## Credentials, usage and data
 
-- Keep real keys in ignored local configuration or hosting secrets, never in browser code, Git history, screenshots, URLs or shared archives. `.env.example` contains an empty placeholder only. Future operators configure their own identity and secrets; this snapshot does not connect to a personal deployment.
+- Keep real keys in ignored local configuration or hosting secrets, never in browser code, Git history, screenshots, URLs or shared archives. `.env.example` contains an empty placeholder only. Future operators configure their own identity and secrets; a local installation is not automatically connected to the linked demonstration deployment.
 - Live work requires an unexpired, bounded server authorization and the saved model switch. Request reservations persist before dispatch; OFF blocks new dispatch, while an already dispatched request may finish and count. A conservative cost reserve is an application guard, not provider-enforced billing or a verified account balance.
 - Failed provider work is not retried automatically. Output repair has a finite ceiling. An audited allowance change must preserve already used requests and cannot silently reset a counter, extend expiry or bypass a fault.
 - Use fictional data only. Live inference sends the supplied synthetic text and relevant evidence to the configured model provider. Input/output checks catch selected credential-like patterns; they are not comprehensive anonymization, sensitive-data detection or a guarantee of privacy.
@@ -28,6 +28,6 @@ Normal answers require explicit approval of the exact text before separate TEST 
 
 ## Sharing this release
 
-Publish a fresh reviewed snapshot, not the original working history. Exclude real environment files, runtime data, private preparation notes, account-specific hosting configuration and temporary files. Review author/committer metadata, document/image metadata, links and account ownership before publication. Even clean files cannot conceal a personal account name embedded in a repository owner or website hostname; use an appropriate neutral publishing identity and URL when anonymity is required.
+Publish a fresh reviewed snapshot, not the original working history. Exclude real environment files, runtime data, private preparation notes, account-specific hosting configuration and temporary files. Review author/committer metadata, document/image metadata, links and account ownership before publication. The repository owner account and demonstration website address are intentionally public. That public identity does not grant access to runtime credentials, private records or model usage. Real personal contact details and credentials remain excluded from source and commit metadata.
 
 The diagrams and examples are synthetic learning resources. This repository is a prototype with explicit limitations, not a completed security assessment, production deployment or full staff-training product.
