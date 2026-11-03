@@ -1,0 +1,113 @@
+# Workflow
+
+[Editable Mermaid source](Workflow.mmd) · [Workflow PDF](Workflow.pdf) · [Workflow SVG](Workflow.svg)
+
+```mermaid
+---
+title: Workflow
+config:
+  theme: base
+  themeVariables:
+    fontFamily: "Arial, Helvetica, sans-serif"
+    fontSize: "14px"
+    primaryColor: "#ffffff"
+    primaryBorderColor: "#889aa7"
+    primaryTextColor: "#193040"
+    lineColor: "#526575"
+    edgeLabelBackground: "#ffffff"
+  block:
+    padding: 18
+---
+block-beta
+    %% The grid places the clarification lane left of the main workflow,
+    %% and the repair and human-handling lane to its right.
+    columns 7
+    space LEFT_TITLE["CLARIFY AND RESUME"] space MAIN_TITLE["Workflow<br/>MAIN WORKFLOW"] space RIGHT_TITLE["REPAIR AND HUMAN HANDLING"] space
+    space:3 START(["Receive email"]) space:3
+    MERGE_RETURN_TOP((" ")) space:2 INPUT["Check input format and restore<br/>conversation context"] space:3
+    space:2 STAGE1_TITLE["STAGE 1<br/>Understand and triage"] space:4
+    space:3 AI1["One LLM call: human request,<br/>multiple intents, risk,<br/>missing information, search direction"] space:3
+    space C_IN(("C")) space CHECK1["Program validates analysis and<br/>enforces routing constraints"] space:3
+    space ASK["AI prepares a specific<br/>clarification question"] space ROUTE{"Next step"} space H_ROUTE(("H")) space
+    space ASKCHECK{"Program checks<br/>clarification<br/>question"} H_ASK(("H")) SEARCH["Retrieve relevant<br/>knowledge passages"] space:3
+    space SEND["Automatically send clarification:<br/>target integration"] space EMPTY{"Retrieval empty?"} space GAP["Seek additional approved<br/>sources or hand off"] space
+    space WAIT["Wait for customer reply"] space AI2["Stage 2: One LLM call to assess<br/>evidence applicability and draft"] space H_GAP(("H")) space
+    space:2 C_AI2(("C")) space H_AI2(("H")) REPAIR_RETURN_IN((" ")) REPAIR_RETURN_TOP((" "))
+    MERGE_RETURN_BOTTOM((" ")) MERGE["Merge original email, question<br/>and new reply"] space VALIDATE["Program checks format, citations<br/>and fixed constraints"] space RETRY{"Repairable and<br/>fewer than<br/>3 retries?"} space
+    space:3 REVIEW["Support reviews and edits"] H_RETRY(("H")) FEEDBACK["Keep evidence and constraints;<br/>add error feedback"] REPAIR_RETURN_BOTTOM((" "))
+    space HOLD["Save edits or rejection record;<br/>do not send"] space APPROVE{"Support approves<br/>sending?"} space H_IN(("H")) space
+    space:3 SAVE["Save approved final text<br/>and review record"] space HUMAN["Human handling"] space
+    space:3 SENDANSWER["Send the approved email to the<br/>customer: target integration"] space:3
+    space:3 SENT{"Delivery service<br/>result"} space SENDFAIL["Record failed or uncertain<br/>delivery; support checks"] space
+    space:3 DONE(["Save sent status and delivery receipt"]) space:3
+    LEGEND["C continues at the C above clarification.<br/>H continues at the H above Human handling.<br/>Circles connect routes on this page.<br/>Prototype delivery uses a TEST outbox only."]:7
+
+    %% Stage 1: Understand and triage
+    START --> INPUT
+    INPUT --> AI1
+    AI1 --> CHECK1
+    CHECK1 --> ROUTE
+    %% H destinations are on-page continuation markers for HUMAN.
+    ROUTE -- "Human requested, risk<br/>or analysis failure" --> H_ROUTE
+    ROUTE -- "Missing required<br/>customer information" --> ASK
+    ROUTE -- "Can proceed" --> SEARCH
+    SEARCH --> EMPTY
+    EMPTY -- "Yes" --> GAP
+    GAP --> H_GAP
+    EMPTY -- "No" --> AI2
+    %% C_AI2 continues at C_IN and then ASK.
+    AI2 -- "Need customer<br/>information" --> C_AI2
+    AI2 -- "Insufficient or<br/>conflicting evidence,<br/>or risk" --> H_AI2
+    AI2 -- "Actionable draft produced" --> VALIDATE
+    VALIDATE -- "Fail" --> RETRY
+    RETRY -- "Yes: log error and retry count" --> FEEDBACK
+    %% Small junction dots turn the repair return around the right lane.
+    FEEDBACK --- REPAIR_RETURN_BOTTOM
+    REPAIR_RETURN_BOTTOM --- REPAIR_RETURN_TOP
+    REPAIR_RETURN_TOP --- REPAIR_RETURN_IN
+    REPAIR_RETURN_IN --> AI2
+    RETRY -- "No" --> H_RETRY
+    VALIDATE -- "Pass" --> REVIEW
+    ASK --> ASKCHECK
+    ASKCHECK -- "Fail or human<br/>judgment needed" --> H_ASK
+    ASKCHECK -- "Pass" --> SEND
+    SEND --> WAIT
+    WAIT --> MERGE
+    %% Small junction dots route the return around the left lane.
+    MERGE --- MERGE_RETURN_BOTTOM
+    MERGE_RETURN_BOTTOM --- MERGE_RETURN_TOP
+    MERGE_RETURN_TOP --> INPUT
+    HUMAN --> REVIEW
+    REVIEW --> APPROVE
+    APPROVE -- "No" --> HOLD
+    APPROVE -- "Yes" --> SAVE
+    SAVE --> SENDANSWER
+    SENDANSWER --> SENT
+    SENT -- "Success" --> DONE
+    SENT -- "Failed or unknown" --> SENDFAIL
+    C_IN --> ASK
+    H_IN --> HUMAN
+
+    classDef heading fill:transparent,stroke:transparent,color:#315f79,font-weight:bold;
+    classDef model fill:#eaf3f8,stroke:#315f79,color:#193040;
+    classDef clarify fill:#f3f8fb,stroke:#397995,color:#193040;
+    classDef repair fill:#f7f4fa,stroke:#76618d,color:#193040;
+    classDef review fill:#fcf7ee,stroke:#95622c,color:#193040;
+    classDef terminal fill:#edf4f7,stroke:#315f79,color:#193040;
+    classDef clarifyConnector fill:#397995,stroke:#397995,color:#ffffff,font-weight:bold;
+    classDef humanConnector fill:#95622c,stroke:#95622c,color:#ffffff,font-weight:bold;
+    classDef routeAnchor fill:#526575,stroke:#526575,color:#526575;
+    classDef legend fill:#f6fafc,stroke:#d5dee5,color:#526575;
+
+    class LEFT_TITLE,RIGHT_TITLE,STAGE1_TITLE heading
+    style MAIN_TITLE fill:transparent,stroke:transparent,color:#193040,font-weight:bold,font-size:20px
+    class AI1,AI2 model
+    class ASK,ASKCHECK,SEND,WAIT,MERGE clarify
+    class RETRY,FEEDBACK repair
+    class HUMAN,REVIEW,APPROVE review
+    class START,DONE terminal
+    class C_IN,C_AI2 clarifyConnector
+    class H_ROUTE,H_ASK,H_AI2,H_GAP,H_RETRY,H_IN humanConnector
+    class MERGE_RETURN_TOP,MERGE_RETURN_BOTTOM,REPAIR_RETURN_TOP,REPAIR_RETURN_IN,REPAIR_RETURN_BOTTOM routeAnchor
+    class LEGEND legend
+```

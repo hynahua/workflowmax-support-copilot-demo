@@ -18,8 +18,8 @@ from reportlab.pdfbase.ttfonts import TTFont
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / "diagrams/workflow-english.mmd"
-BASE = ROOT / "diagrams/workflow-interview"
+SOURCE = ROOT / "scripts/workflow-topology.mmd"
+BASE = ROOT / "diagrams/Workflow"
 W, H = 1191, 1684  # A2 portrait, in PDF points; one continuous vector page.
 INK = "#193040"
 MUTED = "#526575"
@@ -62,11 +62,11 @@ pdfmetrics.registerFont(TTFont("Arial-Bold", "/System/Library/Fonts/Supplemental
 class Drawing:
     def __init__(self):
         self.c = canvas.Canvas(str(BASE.with_suffix(".pdf")), pagesize=(W, H), pageCompression=1)
-        self.c.setTitle("WorkflowMAX Support Copilot - Target support workflow")
+        self.c.setTitle("Workflow")
         self.c.setAuthor("WorkflowMAX Support Copilot")
         self.c.setSubject("Single-page English workflow; reviewed node meanings and routing preserved")
         self.svg = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-labelledby="title desc">',
-                    '<title id="title">WorkflowMAX Support Copilot - Target support workflow</title>',
+                    '<title id="title">Workflow</title>',
                     '<desc id="desc">A single-page English flowchart with a vertical main path, clarification at left, repair at right, and human handling before approval. Matching C and H circles are connectors on this same page. The source contains 26 process or decision nodes and 33 directed relationships. The prototype uses only a TEST outbox.</desc>',
                     '<rect width="1191" height="1684" fill="white"/>']
         self.text_boxes = []
@@ -160,7 +160,7 @@ class Drawing:
 
 D = Drawing()
 D.text(48,48,"WORKFLOWMAX SUPPORT COPILOT",12,MUTED,True,align="start")
-D.text(48,84,"Target support workflow",28,INK,True,align="start")
+D.text(48,84,"Workflow",28,INK,True,align="start")
 D.text(48,111,"Two model stages  |  Program checks  |  Explicit human approval before the final reply",13,MUTED,align="start")
 D.line([(48,133),(1143,133)],"#D5DEE5",.9,False)
 D.text(50,158,"CLARIFY AND RESUME",11,CLARIFY,True,align="start")

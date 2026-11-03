@@ -34,12 +34,9 @@ The local navigation calls its conversation entry **Local practice workspace** a
 
 ## Workflow diagrams
 
-Use the single-page English interview diagram to follow the main path, clarification loop, repair loop and human handoff.
+Open [Workflow](diagrams/Workflow.md) to view the Mermaid diagram. The main path is in the centre, with clarification on the left and repair and human handling on the right.
 
-- [English interview diagram PDF](diagrams/workflow-interview-english.pdf)
-- [English interview diagram SVG](diagrams/workflow-interview-english.svg)
-
-The [editable Mermaid source](diagrams/workflow-english.mmd) defines the same steps and branches. The Mermaid automatic layout is available as [PNG](diagrams/workflow-english.png) and [SVG](diagrams/workflow-english.svg).
+[Editable Mermaid source](diagrams/Workflow.mmd) · [Workflow PDF](diagrams/Workflow.pdf) · [Workflow SVG](diagrams/Workflow.svg)
 
 The colorful memory map helps you remember the main stages and loops.
 
