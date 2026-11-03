@@ -1,0 +1,62 @@
+{
+  "version": "kb-2026-11-01-v1",
+  "articles": [
+    {
+      "id": "K-001",
+      "title": "Create a job from scratch",
+      "url": "https://support.workflowmax.com/hc/en-us/articles/24773555131929-Create-a-job-from-scratch",
+      "publisher": "WorkflowMAX Help Centre",
+      "source_updated": "2026-02-27",
+      "reviewed_at": "2026-11-01",
+      "locator": "Before you begin; Create a new job",
+      "active": true,
+      "tags": ["job", "jobs", "create", "new", "project", "client", "setup"],
+      "summary": "Creating a basic job and associating it with a client.",
+      "facts": [
+        "Every job must be associated with a client; the client may already exist or be added during job creation.",
+        "One documented starting point is the Dashboard quick-add menu, using its create-new-job option.",
+        "Complete the job information, client, template if applicable, and scheduling details on the new-job form.",
+        "Saving creates the basic job and opens its detail screen for further information."
+      ],
+      "conditions": ["This is navigation guidance, not authority to create or modify a customer's records.", "Do not infer accounting configuration or permissions from these selected facts."]
+    },
+    {
+      "id": "K-002",
+      "title": "About timesheets",
+      "url": "https://support.workflowmax.com/hc/en-us/articles/24773474827161-About-timesheets",
+      "publisher": "WorkflowMAX Help Centre",
+      "source_updated": "2026-08-10",
+      "reviewed_at": "2026-11-01",
+      "locator": "Entering time and viewing timesheets; Frequently Asked Questions",
+      "active": true,
+      "tags": ["timesheet", "timesheets", "time", "weekly", "daily", "entry", "save", "autosave"],
+      "summary": "Where people enter their own time and the conditions for weekly entry.",
+      "facts": [
+        "Staff can enter their own time through the Dashboard quick-add time-entry option or through their personal timesheets screen.",
+        "Weekly time entry requires the organisation's Weekly Timesheet Entry setting to be enabled.",
+        "The weekly timesheet view does not save automatically; its save control must be used.",
+        "Submitting a week's timesheet locks it against further entries."
+      ],
+      "conditions": ["Do not assume an organisation setting or permission is already enabled.", "The absence of autosave does not establish the cause of a reported error after saving."]
+    },
+    {
+      "id": "K-003",
+      "title": "About quick time entry",
+      "url": "https://support.workflowmax.com/hc/en-us/articles/24773453758873-About-quick-time-entry",
+      "publisher": "WorkflowMAX Help Centre",
+      "source_updated": "2026-06-19",
+      "reviewed_at": "2026-11-01",
+      "locator": "Introduction; Draft quick time entries; Using the timer",
+      "active": true,
+      "tags": ["quick", "timer", "time", "record", "permission", "access", "locked", "submitted", "draft"],
+      "summary": "Quick time recording, incomplete drafts, access limits and submitted records.",
+      "facts": [
+        "The menu-bar timer opens quick time entry to record work as it happens or manage entries.",
+        "If the required job is not visible because of permissions, contact the system administrator or support.",
+        "A submitted timesheet is locked: entries can be viewed but not changed in that state.",
+        "A quick-time entry remains a draft until the required time, client, job and task details are complete."
+      ],
+      "conditions": ["Do not offer a permission bypass or assume the requester may unlock a timesheet.", "The selected facts do not include an approved unlock procedure."]
+    }
+  ]
+}

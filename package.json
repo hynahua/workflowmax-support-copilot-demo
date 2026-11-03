@@ -1,0 +1,28 @@
+{
+  "name": "workflowmax-support-lab",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "packageManager": "npm@11.9.0",
+  "scripts": {
+    "demo": "node server/index.mjs --rehearsal --auto-port --open-browser",
+    "dev": "node server/index.mjs",
+    "live": "NODE_USE_ENV_PROXY=1 node server/index.mjs --live",
+    "rehearsal": "node server/index.mjs --rehearsal",
+    "test": "node --test",
+    "check": "node scripts/check.mjs",
+    "build:share": "node scripts/build-share.mjs",
+    "eval:rehearsal": "node scripts/evaluate.mjs",
+    "eval:live": "NODE_USE_ENV_PROXY=1 node scripts/evaluate-live.mjs",
+    "eval:conversation:live": "NODE_USE_ENV_PROXY=1 node scripts/evaluate-conversation-live.mjs"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  }
+}

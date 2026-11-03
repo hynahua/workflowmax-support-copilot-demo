@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "draft",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "summary": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 600
+    },
+    "risk_flags": {
+      "type": "array",
+      "maxItems": 8,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "bug",
+          "complaint",
+          "churn",
+          "financial_advice",
+          "access",
+          "locked_record",
+          "instruction_attack",
+          "uncertain"
+        ]
+      }
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1200
+    },
+    "draft": {
+      "type": "string",
+      "maxLength": 4500
+    },
+    "citation_ids": {
+      "type": "array",
+      "maxItems": 3,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^K-[0-9]{3}$"
+      }
+    },
+    "decision": {
+      "enum": [
+        "draft",
+        "clarify",
+        "handoff"
+      ]
+    },
+    "missing_information": {
+      "type": "array",
+      "maxItems": 3,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "screen",
+          "task",
+          "error_message"
+        ]
+      }
+    },
+    "clarification": {
+      "type": "string",
+      "maxLength": 500
+    }
+  },
+  "required": [
+    "summary",
+    "risk_flags",
+    "reason",
+    "draft",
+    "citation_ids",
+    "decision",
+    "missing_information",
+    "clarification"
+  ]
+}

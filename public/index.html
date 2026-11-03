@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A local, human-reviewed support workflow prototype using public WorkflowMAX articles and synthetic emails.">
+  <title>WorkflowMAX · Knowledge &amp; review guide</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script defer src="./app.js"></script>
+</head>
+<body>
+  <section id="fileHelp" class="file-help" hidden aria-labelledby="fileHelpHeading">
+    <div class="file-help-card">
+      <span class="brand-wordmark">workflow<span>MAX</span></span>
+      <p class="eyebrow">SUPPORT LAB · LOCAL DEMO</p>
+      <h1 id="fileHelpHeading">让我们打开完整的工作台。</h1>
+      <p>你现在打开的是网页源文件。完整的样式、邮件样例和审核记录需要通过本地应用打开。</p>
+      <ol><li>回到项目文件夹 <strong>WorkflowMAX-support-copilot</strong>。</li><li>双击 <strong>Open Demo.command</strong>。</li><li>浏览器会自动打开正确页面。演练不会调用付费 API。</li></ol>
+      <div class="file-help-alternative">也可以在项目终端运行 <code>npm run demo</code>。保留启动窗口；结束时按 Control + C。</div>
+    </div>
+  </section>
+  <a href="#main" class="skip-link">Skip to workspace</a>
+  <header class="topbar">
+    <div class="brand"><span class="brand-wordmark" aria-label="WorkflowMAX">workflow<span>MAX</span></span><span class="brand-divider"></span><div><strong>Support Lab</strong><span class="brand-sub">INTERVIEW PROTOTYPE</span></div></div>
+    <nav aria-label="Workspace"><a class="nav-button" href="/">Training examples</a><a id="referenceLiveLink" class="nav-button" href="/live">Owner live workspace</a><a class="nav-button active" href="/legacy" aria-current="page">Knowledge &amp; review guide</a></nav>
+    <span class="reviewer"><span class="avatar">R</span><span>Demo reviewer<span class="reviewer-role">Support workspace</span></span></span>
+  </header>
+  <main id="main">
+    <nav class="reference-tabs" aria-label="Reference sections">
+      <button class="nav-button active" data-view="knowledge" aria-current="page">Knowledge</button>
+      <button class="nav-button" data-view="guide">Review guide</button>
+      <button class="nav-button" data-view="records">Review records <span id="recordCount" class="nav-count">0</span></button>
+      <button class="nav-button" data-view="workspace">Optional rules practice</button>
+    </nav>
+    <div id="notice" class="mode-notice" role="status">Connecting to the local workspace…</div>
+    <div id="message" class="message" role="alert" hidden></div>
+
+    <section id="workspaceView" hidden>
+      <div class="page-heading workspace-heading"><div class="hero-copy"><p class="eyebrow"><span class="hero-dot"></span> BETTER SUPPORT, WITH A HUMAN IN CONTROL</p><h1>Review before you reply.</h1><p class="subtitle">A little less searching. A little more understanding.</p><div class="hero-steps"><span><b>01</b> Understand the request</span><span><b>02</b> Check the evidence</span><span><b>03</b> Make the call</span></div></div><div class="hero-side"><span class="hero-symbol" aria-hidden="true">↗</span><div class="heading-tags"><span class="pill">Synthetic emails</span><span class="pill green">Human review required</span></div></div></div>
+      <div class="workspace-caption"><div><span class="section-dot"></span><strong>Your support workspace</strong><span class="workspace-caption-detail">From incoming request to a considered reply.</span></div><span class="workspace-caption-tag">CASE A <span> / </span> SUPPORT COPILOT</span></div>
+      <div class="workspace-grid">
+        <aside class="panel library" aria-label="Synthetic email library">
+          <div class="panel-heading"><h2>Demo inbox</h2><span id="sampleCount" class="count">12</span></div>
+          <div class="search-wrap"><label class="sr-only" for="sampleSearch">Search synthetic samples</label><input id="sampleSearch" type="search" placeholder="Search samples…"></div>
+          <div id="sampleList" class="sample-list"></div>
+          <div class="library-footer"><span class="small-dot"></span> Safe to explore. All synthetic.</div>
+        </aside>
+
+        <div class="work-column">
+          <section class="panel email-panel" aria-labelledby="requestHeading">
+            <div class="panel-heading"><div class="heading-with-icon"><span class="panel-icon" aria-hidden="true">↙</span><h2 id="requestHeading">Incoming request</h2></div><span id="sampleLabel" class="quiet-label">T-001 · SYNTHETIC</span></div>
+            <div class="email-fields"><label for="subject">Subject</label><input id="subject" maxlength="200" placeholder="Enter a synthetic subject"><label for="emailBody">Email</label><textarea id="emailBody" maxlength="6000" rows="5" placeholder="Paste synthetic email text only"></textarea></div>
+            <div class="request-footer"><span id="inputHint">Public knowledge. No customer-system access.</span><button id="analyseButton" class="button primary" disabled><span id="analyseLabel">Analyse email</span><span aria-hidden="true">↗</span></button></div>
+          </section>
+
+          <section class="panel analysis-panel" aria-labelledby="analysisHeading">
+            <div class="panel-heading"><div class="heading-with-icon"><span class="panel-icon mint-icon" aria-hidden="true">✧</span><h2 id="analysisHeading">Review workspace</h2></div><span id="runStatus" class="quiet-label">AWAITING ANALYSIS</span></div>
+            <div id="emptyState" class="empty-state"><div class="empty-illustration" aria-hidden="true"><span class="empty-orbit"></span><span class="empty-paper"><i></i><i></i><i></i></span><span class="empty-spark">✧</span></div><h3>Good answers start with context.</h3><p>Choose an email to see its intent, evidence and suggested next step. You keep the final decision.</p><div class="empty-steps"><span>Understand</span><span>Ground</span><span>Review</span></div></div>
+            <div id="runContent" hidden>
+              <div id="runError" class="run-error" role="status" hidden></div>
+              <p id="runMode" class="source-meta"></p>
+              <div id="dirtyNotice" class="dirty-notice" role="status" hidden>Input changed. Run the analysis again before reviewing this draft.</div>
+              <div class="analysis-body"><div id="routeCard" class="route-card"></div><div id="signalChips" class="signal-chips"></div><p id="analysisReason" class="analysis-reason"></p><div class="check-strip"><span id="structureCheck"></span><span id="citationCheck"></span><span>Content: check the evidence</span></div>
+                <div class="draft-heading"><label for="draftText">Reply draft <span id="draftEditHint">Editable · never sent by this demo</span></label><span id="draftSourceCount" class="quiet-label"></span></div>
+                <textarea id="draftText" class="draft-text" rows="8" placeholder="A usable draft will appear here. For a failed run, record rejection or escalation."></textarea>
+                <label class="review-label" for="reviewNote">Review note <span>Required when proposing a knowledge change</span></label><textarea id="reviewNote" rows="2" maxlength="2000" placeholder="What did you check or change?"></textarea>
+                <details class="proposal-details"><summary>Suggest a knowledge correction</summary><label class="sr-only" for="knowledgeProposal">Pending knowledge correction</label><textarea id="knowledgeProposal" rows="2" maxlength="2000" placeholder="Describe a correction for a content owner to review"></textarea><p>Saved as a pending proposal. It will not update the knowledge collection automatically.</p></details>
+                <div id="savedReview" class="saved-review" hidden></div>
+                <div class="review-actions"><button id="rejectButton" class="button secondary">Reject</button><button id="escalateButton" class="button secondary">Record escalation</button><button id="approveButton" class="button primary">Approve draft <span aria-hidden="true">✓</span></button></div>
+                <p class="review-footnote">This records your decision locally. No email is sent and no customer record is changed.</p>
+                <details class="audit-details"><summary>Inspect run provenance &amp; JSON</summary><pre id="runJson"></pre></details>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <aside class="evidence-column" aria-label="Source evidence">
+          <section class="panel evidence-panel"><div class="panel-heading"><h2>Evidence</h2><span id="evidenceCount" class="count">3</span></div><p id="evidenceIntro" class="evidence-intro">The curated public collection. Selected evidence appears after analysis.</p><div id="sourceList"></div></section>
+          <div class="boundary-note"><span class="line-icon" aria-hidden="true">◇</span><div><h3>A link is a starting point.</h3><p>Check whether the facts and conditions support this particular reply. Valid JSON is not a fact check.</p></div></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="knowledgeView"><div class="page-heading"><div><p class="eyebrow">A SMALL, REVIEWABLE COLLECTION</p><h1>Know what the answer rests on.</h1><p class="subtitle">Three official articles, curated into attributed facts and conditions. No private knowledge.</p></div><span id="knowledgeVersion" class="pill green"></span></div><div id="knowledgeCards" class="knowledge-grid"></div><div class="plain-note">A source review date is not a guarantee of freshness or account applicability. Missing information in this collection does not mean the product lacks the feature.</div></section>
+
+    <section id="recordsView" hidden>
+      <div class="page-heading"><div><p class="eyebrow">DECISIONS THAT CAN BE TRACED</p><h1>Review records.</h1><p class="subtitle">Runs, reviewer edits and pending knowledge proposals, saved on this computer.</p></div><button id="refreshRecords" class="button secondary">Refresh records</button></div>
+      <div class="panel records-panel"><div id="recordsList"></div></div>
+      <details class="plain-note">
+        <summary><strong>Worked examples (optional rules practice)</strong></summary>
+        <p>Illustrative expected behavior for three fictional samples. These are learning references, not saved live runs, completed reviews or measured outcomes.</p>
+        <article class="source-card">
+          <h3>Create a job · T-001</h3>
+          <p><strong>Request:</strong> “How do I create a job for a client?”</p>
+          <p><strong>Expected:</strong> A supported how-to draft using <a href="https://support.workflowmax.com/hc/en-us/articles/24773555131929-Create-a-job-from-scratch" target="_blank" rel="noopener noreferrer">Create a job from scratch (K-001)</a>.</p>
+          <p><strong>Reviewer check:</strong> Compare the draft with the source and its conditions: every job needs a client, and guidance does not authorise changing customer records. Edit or reject unsupported details before explicitly approving the reply. Approval here records a decision; it does not create a job or send an email.</p>
+        </article>
+        <article class="source-card">
+          <h3>Job access · T-006</h3>
+          <p><strong>Request:</strong> “I don’t have permission to view the required job.”</p>
+          <p><strong>Expected:</strong> Human handling for the access restriction. The curated quick-time guidance (K-003) directs the user to an administrator or support.</p>
+          <p><strong>Reviewer check:</strong> Keep the permission boundary. Do not invent bypass steps, grant access or claim the restriction has been removed.</p>
+        </article>
+        <article class="source-card">
+          <h3>How-to question plus cancellation signal · T-009</h3>
+          <p><strong>Request:</strong> “How do I create a job? … We are considering cancelling our subscription. Please have a person contact us.”</p>
+          <p><strong>Expected:</strong> Preserve the how-to question, complaint and cancellation signal together, then hand off to a person. A relevant job article does not make this a simple how-to case.</p>
+          <p><strong>Reviewer check:</strong> Review the whole message and the requested human follow-up. Do not approve a generic setup answer as though it resolves the complaint or cancellation concern.</p>
+        </article>
+        <p>To save an actual rehearsal review, select the matching sample in Optional rules practice, run the rehearsal, and record your own review decision. These examples do not add records to the list above.</p>
+      </details>
+    </section>
+
+    <section id="guideView" hidden><div class="page-heading"><div><p class="eyebrow">A QUICK GUIDE FOR THE REVIEWER</p><h1>Keep the judgment with a person.</h1><p class="subtitle">Use this workflow as an assistant, with visible boundaries and a clear handoff.</p></div></div><div class="guide-grid"><article class="panel guide-card"><span class="step-number">01</span><h2>Read the whole request</h2><p>Look for overlapping intentions. An operation question can also contain a bug report, complaint or cancellation signal.</p></article><article class="panel guide-card"><span class="step-number">02</span><h2>Check evidence and conditions</h2><p>Open the source, check applicability and compare the draft with the selected facts. Schema and citation checks do not establish factual support.</p></article><article class="panel guide-card"><span class="step-number">03</span><h2>Edit or hand off</h2><p>Use human handling for uncertainty, missing evidence, permissions, suspected bugs and financial decisions. Do not promise an unverified fix.</p></article><article class="panel guide-card"><span class="step-number">04</span><h2>Record what changed</h2><p>Save the review decision and reason. A knowledge proposal waits for content-owner approval and later regression checks; one edit does not train the system.</p></article></div><div class="plain-note">Interview prototype only. All tickets are synthetic. The application never sends customer email. Live-model results and deterministic rehearsals must be reported separately.</div></section>
+    <footer class="page-footer"><span><strong>Support Lab</strong> <span class="footer-dot">/</span> An interview concept for WorkflowMAX</span><span>Public sources <span class="footer-dot">·</span> Synthetic data <span class="footer-dot">·</span> Your judgment</span></footer>
+  </main>
+</body>
+</html>

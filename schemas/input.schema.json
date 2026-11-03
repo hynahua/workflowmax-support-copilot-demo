@@ -1,0 +1,13 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"input",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["subject","body","synthetic","sample_id"],
+  "properties":{
+    "subject":{"type":"string","minLength":1,"maxLength":200},
+    "body":{"type":"string","minLength":1,"maxLength":6000},
+    "synthetic":{"const":true},
+    "sample_id":{"type":["string","null"],"maxLength":30}
+  }
+}

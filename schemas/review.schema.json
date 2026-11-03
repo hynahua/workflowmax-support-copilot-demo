@@ -1,0 +1,14 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"review",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["expected_version","action","draft","note","knowledge_proposal"],
+  "properties":{
+    "expected_version":{"type":"integer","minimum":0},
+    "action":{"enum":["approve","reject","escalate"]},
+    "draft":{"type":"string","maxLength":6000},
+    "note":{"type":"string","maxLength":2000},
+    "knowledge_proposal":{"type":"string","maxLength":2000}
+  }
+}

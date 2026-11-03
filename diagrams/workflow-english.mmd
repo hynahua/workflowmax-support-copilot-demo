@@ -1,0 +1,38 @@
+flowchart TD
+    START([Receive email]) --> INPUT[Check input format and restore conversation context]
+    INPUT --> AI1
+    subgraph PHASE1[Stage 1: Understand and triage]
+        AI1[One LLM call: human request, multiple intents, risk, missing information, search direction]
+        AI1 --> CHECK1[Program validates analysis and enforces routing constraints]
+    end
+    style PHASE1 stroke-dasharray: 6 4
+    CHECK1 --> ROUTE{Next step}
+    ROUTE -->|Human requested, risk or analysis failure| HUMAN[Human handling]
+    ROUTE -->|Missing required customer information| ASK[AI prepares a specific clarification question]
+    ROUTE -->|Can proceed| SEARCH[Retrieve relevant knowledge passages]
+    SEARCH --> EMPTY{Retrieval empty?}
+    EMPTY -->|Yes| GAP[Seek additional approved sources or hand off]
+    GAP --> HUMAN
+    EMPTY -->|No| AI2[Stage 2: One LLM call to assess evidence applicability and draft]
+    AI2 -->|Need customer information| ASK
+    AI2 -->|Insufficient or conflicting evidence, or risk| HUMAN
+    AI2 -->|Actionable draft produced| VALIDATE[Program checks format, citations and fixed constraints]
+    VALIDATE -->|Fail| RETRY{Repairable and fewer than 3 retries?}
+    RETRY -->|Yes: log error and retry count| FEEDBACK[Keep evidence and constraints; add error feedback]
+    FEEDBACK --> AI2
+    RETRY -->|No| HUMAN
+    VALIDATE -->|Pass| REVIEW[Support reviews and edits]
+    ASK --> ASKCHECK{Program checks clarification question}
+    ASKCHECK -->|Fail or human judgment needed| HUMAN
+    ASKCHECK -->|Pass| SEND[Automatically send clarification: target integration]
+    SEND --> WAIT[Wait for customer reply]
+    WAIT --> MERGE[Merge original email, question and new reply]
+    MERGE --> INPUT
+    HUMAN --> REVIEW
+    REVIEW --> APPROVE{Support approves sending?}
+    APPROVE -->|No| HOLD[Save edits or rejection record; do not send]
+    APPROVE -->|Yes| SAVE[Save approved final text and review record]
+    SAVE --> SENDANSWER[Send the approved email to the customer: target integration]
+    SENDANSWER --> SENT{Delivery service result}
+    SENT -->|Success| DONE([Save sent status and delivery receipt])
+    SENT -->|Failed or unknown| SENDFAIL[Record failed or uncertain delivery; support checks]

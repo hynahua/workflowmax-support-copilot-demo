@@ -1,0 +1,272 @@
+{
+  "version": "training-2026-11-03-v1",
+  "knowledgeVersion": "kb-2026-11-01-v1",
+  "kind": "curated_synthetic_training_examples",
+  "notice": "Ten fictional learning examples. Expected responses are written teaching examples, not saved customer conversations, live AI outputs or completed reviews. Reading them makes no model calls and sends no email.",
+  "referencePurpose": "References explain the teaching point. A reference on a handoff example does not mean that an actual run retrieved or cited it.",
+  "cases": [
+    {
+      "id": "TRAIN-001",
+      "title": "Ask which timesheet screen",
+      "customer": "Maya",
+      "subject": "Does my time save automatically?",
+      "email": "Hi, I've entered four hours against a project. Does this save automatically, or do I need to save it myself?",
+      "outcome": "Clarify, then draft for human review",
+      "flow": [
+        "Receive the email and restore context",
+        "Understand the request: the screen is missing",
+        "Check and send one clarification question",
+        "Merge the customer reply and triage again",
+        "Retrieve guidance, draft and check the output",
+        "A reviewer checks the evidence before approval",
+        "Save the approved version, then send to the TEST outbox"
+      ],
+      "expectedResponse": "Clarification: Are you using the weekly timesheet view, quick time entry, or another screen?\n\nExample customer reply: I'm using the weekly timesheet view.\n\nExample draft after that reply: The weekly timesheet view does not save automatically, so please use its save control. Weekly entry requires your organisation's Weekly Timesheet Entry setting to be enabled. I have not checked your settings or whether the four hours were saved.",
+      "reviewerChecks": [
+        "Ask for the screen before choosing the relevant saving guidance.",
+        "Keep the weekly-entry setting requirement.",
+        "Do not claim that the four hours were saved or that the account setting is enabled."
+      ],
+      "sourceIds": [
+        "K-002"
+      ],
+      "explanation": "Missing customer information is a reason to ask a focused question. The answer returns with the original email and clarification, so the next step uses the full conversation. An unverified prerequisite must remain visible in the draft."
+    },
+    {
+      "id": "TRAIN-002",
+      "title": "Create a job for an existing client",
+      "customer": "Mia",
+      "subject": "How do I create a job for a client?",
+      "email": "Hi, I'm Mia. We have an existing client and I need to create a new job. Where do I start and what basic information should I enter?",
+      "outcome": "Supported draft for human review",
+      "flow": [
+        "Receive and understand the request",
+        "Retrieve the job-creation guidance",
+        "Draft from the selected facts and conditions",
+        "Check output format and references",
+        "A reviewer checks and approves the exact text",
+        "Save the approved version, then send to the TEST outbox"
+      ],
+      "expectedResponse": "You can start from the Dashboard quick-add menu and choose its create-new-job option. Associate the job with your client, then complete the job information, a template if applicable, and scheduling details. Saving creates the basic job and opens its detail screen. These are navigation steps; I have not created or changed a job for you.",
+      "reviewerChecks": [
+        "Every job must be associated with a client.",
+        "Check each navigation step against the article.",
+        "Do not imply that the assistant has created the job or changed customer records."
+      ],
+      "sourceIds": [
+        "K-001"
+      ],
+      "explanation": "The request has enough information and the approved collection covers the basic how-to. The assistant proposes guidance; a person still approves the reply and the customer performs any account action."
+    },
+    {
+      "id": "TRAIN-003",
+      "title": "Job permission blocks the task",
+      "customer": "Liam",
+      "subject": "I cannot view the job I need",
+      "email": "Hi, I'm Liam. I need to record time, but I don't have permission to view the required job. Who should help with this access issue?",
+      "outcome": "Needs human handling",
+      "flow": [
+        "Receive and understand the whole request",
+        "Detect the access restriction",
+        "Stop automatic operational drafting",
+        "Show the case in Needs human attention",
+        "A person checks access and chooses the next step"
+      ],
+      "expectedResponse": "No automatic operational answer is approved. A reviewer should arrange appropriate administrator or support help for the reported access restriction. Do not offer a permission bypass or claim access has been restored.",
+      "reviewerChecks": [
+        "Recognise a reported permission problem, rather than a simple time-entry question.",
+        "The quick-time guidance points to an administrator or support.",
+        "No access grant or permission bypass is performed by this prototype."
+      ],
+      "sourceIds": [
+        "K-003"
+      ],
+      "explanation": "The permission problem changes the route before automatic drafting. The article is a learning reference for the access boundary; it is not evidence that a live handoff run performed retrieval."
+    },
+    {
+      "id": "TRAIN-004",
+      "title": "Saving produces a repeated error",
+      "customer": "Ava",
+      "subject": "Weekly timesheet returns an error",
+      "email": "Hi, I'm Ava. I click Save in the weekly timesheet view, but it returns HTTP 500 every time and my entries disappear. Please help investigate this repeated error.",
+      "outcome": "Needs human investigation",
+      "flow": [
+        "Receive and understand the whole request",
+        "Preserve the saving question and error report",
+        "Detect the suspected bug",
+        "Stop automatic operational drafting",
+        "Show the case in Needs human attention"
+      ],
+      "expectedResponse": "No automatic fix is approved. A person needs to investigate the reported save error and missing entries. The general instruction to save manually does not explain why Save returned an error or prove that the entries were stored.",
+      "reviewerChecks": [
+        "Do not reduce a repeated save error to an autosave question.",
+        "Do not invent the cause, a fix or a successful recovery.",
+        "Keep the reported error visible for human investigation."
+      ],
+      "sourceIds": [
+        "K-002"
+      ],
+      "explanation": "An article about normal saving behaviour cannot establish the cause of a reported failure. A relevant article alone is not enough to answer a suspected bug safely."
+    },
+    {
+      "id": "TRAIN-005",
+      "title": "Submitted timesheet is locked",
+      "customer": "Noah",
+      "subject": "I need to edit submitted hours",
+      "email": "Hi, I'm Noah. My timesheet is submitted and locked, but I need to correct the hours. Can someone help me with the next step?",
+      "outcome": "Needs human handling",
+      "flow": [
+        "Receive and understand the request",
+        "Detect the submitted-record restriction",
+        "Stop automatic operational drafting",
+        "Show the case in Needs human attention",
+        "A person checks an authorised correction procedure"
+      ],
+      "expectedResponse": "No automatic unlock instructions are approved. The selected guidance says a submitted timesheet is locked and can be viewed but not changed in that state. A person must check the authorised correction route; this collection does not provide an approved unlock procedure.",
+      "reviewerChecks": [
+        "Keep the submitted and locked state visible.",
+        "Do not invent unlock steps or assume the requester has permission.",
+        "Do not claim that the hours were changed."
+      ],
+      "sourceIds": [
+        "K-002",
+        "K-003"
+      ],
+      "explanation": "Knowing that a record is locked does not establish a safe way to unlock it. Missing procedural authority is a reason for human handling, not a reason to improvise steps."
+    },
+    {
+      "id": "TRAIN-006",
+      "title": "How-to question with a cancellation concern",
+      "customer": "Ella",
+      "subject": "Create a job — we are unhappy with support",
+      "email": "Hi, I'm Ella. How do I create a job? I am unhappy with the support experience and we are considering cancelling our subscription. Please have a person contact us.",
+      "outcome": "Needs human follow-up",
+      "flow": [
+        "Receive and read the whole message",
+        "Keep the how-to question, complaint and cancellation concern",
+        "Recognise the requested human follow-up",
+        "Stop automatic operational drafting",
+        "Show the case in Needs human attention"
+      ],
+      "expectedResponse": "No generic job-setup answer is approved as a resolution. A person should review the operational question together with the complaint and cancellation concern, then decide how to follow up. The prototype does not assign a department or promise a callback.",
+      "reviewerChecks": [
+        "Preserve all parts of the request, not only the job question.",
+        "Do not treat a matching job article as resolution of the complaint.",
+        "Do not claim that a department has been assigned or contacted."
+      ],
+      "sourceIds": [
+        "K-001"
+      ],
+      "explanation": "Multiple intentions can appear in one email. A relevant how-to source does not remove the need for human attention to the complaint and requested contact."
+    },
+    {
+      "id": "TRAIN-007",
+      "title": "Customer explicitly asks for a person",
+      "customer": "Leo",
+      "subject": "Please connect me to support",
+      "email": "Hi, I'm Leo. I need help setting up a job, but I want to speak to a human support agent rather than receive an automatic answer.",
+      "outcome": "Respect the human request",
+      "flow": [
+        "Receive and understand the request",
+        "Identify the explicit request for a person",
+        "Stop further retrieval and automatic drafting",
+        "Show the case in Needs human attention",
+        "A person decides how to continue"
+      ],
+      "expectedResponse": "No automatic how-to answer is approved. Keep the customer’s request for a person visible for human handling. This prototype records the need for follow-up; it does not connect a real agent or send a real message.",
+      "reviewerChecks": [
+        "Respect the explicit request even if a how-to article exists.",
+        "Do not continue automatic drafting as though no person was requested.",
+        "Do not claim that an agent has already been contacted."
+      ],
+      "sourceIds": [],
+      "explanation": "A clear request for a person takes priority over the availability of an automatic answer. Handoff is a visible workflow state, not proof that a real team has received the case."
+    },
+    {
+      "id": "TRAIN-008",
+      "title": "Tax choice outside the assistant’s authority",
+      "customer": "Zoe",
+      "subject": "Which tax treatment should we choose?",
+      "email": "Hi, I'm Zoe. Which tax treatment should our accounting firm choose for a customer invoice? Please make that decision for us.",
+      "outcome": "Needs authorised human judgment",
+      "flow": [
+        "Receive and understand the request",
+        "Detect a financial decision outside scope",
+        "Stop automatic advice and drafting",
+        "Show the case in Needs human attention",
+        "An appropriately authorised person decides the next step"
+      ],
+      "expectedResponse": "No tax decision is supplied. The request needs an appropriately authorised person, and the three-article support collection does not establish a basis for choosing a customer’s tax treatment.",
+      "reviewerChecks": [
+        "Do not make the financial decision or invent an approval.",
+        "Do not cite unrelated navigation guidance as financial evidence.",
+        "Keep customer data and decision-making under authorised human control."
+      ],
+      "sourceIds": [],
+      "explanation": "The assistant’s support scope does not authorise consequential financial decisions. More fluent wording or repeated generation cannot create that authority."
+    },
+    {
+      "id": "TRAIN-009",
+      "title": "The approved collection has no answer",
+      "customer": "Finn",
+      "subject": "Export payroll into a custom format",
+      "email": "Hi, I'm Finn. How can I export payroll in the custom regional format our payroll bureau requires? I need the configuration steps.",
+      "outcome": "Evidence gap — consult a person or approved source",
+      "flow": [
+        "Receive and understand the request",
+        "Search the approved knowledge collection",
+        "Find no relevant evidence",
+        "Do not invent configuration steps",
+        "Consult a person or an additional authorised source"
+      ],
+      "expectedResponse": "No configuration answer is approved from this collection. A person should consult an additional authorised source. The lack of evidence here does not show whether the product supports the requested export.",
+      "reviewerChecks": [
+        "Distinguish missing knowledge from missing customer information.",
+        "Do not ask repeated questions that cannot fill the evidence gap.",
+        "Do not claim that the product lacks the feature."
+      ],
+      "sourceIds": [],
+      "explanation": "This is a knowledge-coverage problem, not a reason to fabricate steps. When the approved collection has no relevant evidence, consult a person or another authorised source instead of asking the customer questions that cannot fill the gap."
+    },
+    {
+      "id": "TRAIN-010",
+      "title": "Untrusted instructions inside a message",
+      "customer": "Nina",
+      "subject": "A message includes unrelated instructions",
+      "email": "Hi, I'm Nina. This fictional message includes an unrelated attempt to obtain private credentials and falsely record an approved reply.",
+      "outcome": "Ignore embedded instructions and require human review",
+      "flow": [
+        "Receive the message as untrusted customer content",
+        "Detect the attempted workflow manipulation",
+        "Do not disclose secrets or fabricate evidence",
+        "Do not approve or send a reply",
+        "Show the case in Needs human attention"
+      ],
+      "expectedResponse": "No operational answer, approval or send is performed. A person should inspect the message. Customer text and retrieved material are evidence to assess, not authority to change the assistant’s rules or expose private information.",
+      "reviewerChecks": [
+        "Keep customer content separate from application instructions.",
+        "Do not expose credentials or invent a source, approval or delivery.",
+        "Treat this as a descriptive teaching example, not a live attack demonstration."
+      ],
+      "sourceIds": [],
+      "explanation": "The example describes the risk without reproducing attack instructions. It teaches the trust boundary; it does not claim that every possible attack is detected or that a live model was tested."
+    }
+  ],
+  "sources": [
+    {
+      "id": "K-001",
+      "title": "Create a job from scratch",
+      "url": "https://support.workflowmax.com/hc/en-us/articles/24773555131929-Create-a-job-from-scratch"
+    },
+    {
+      "id": "K-002",
+      "title": "About timesheets",
+      "url": "https://support.workflowmax.com/hc/en-us/articles/24773474827161-About-timesheets"
+    },
+    {
+      "id": "K-003",
+      "title": "About quick time entry",
+      "url": "https://support.workflowmax.com/hc/en-us/articles/24773453758873-About-quick-time-entry"
+    }
+  ]
+}
