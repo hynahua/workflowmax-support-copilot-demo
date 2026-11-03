@@ -1,0 +1,453 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1191" height="1684" viewBox="0 0 1191 1684" role="img" aria-labelledby="title desc">
+<title id="title">WorkflowMAX Support Copilot - Target support workflow</title>
+<desc id="desc">A single-page English flowchart with a vertical main path, clarification at left, repair at right, and human handling before approval. Matching C and H circles are connectors on this same page. The source contains 26 process or decision nodes and 33 directed relationships. The prototype uses only a TEST outbox.</desc>
+<rect width="1191" height="1684" fill="white"/>
+<text x="48" y="48.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#526575">WORKFLOWMAX SUPPORT COPILOT</text>
+<text x="48" y="84.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#193040">Target support workflow</text>
+<text x="48" y="111.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#526575">Two model stages  |  Program checks  |  Explicit human approval before the final reply</text>
+<path d="M48,133 L1143,133" fill="none" stroke="#D5DEE5" stroke-width="0.9" stroke-linejoin="round"/>
+<text x="50" y="158.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#397995">CLARIFY AND RESUME</text>
+<text x="425" y="158.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#315F79">MAIN WORKFLOW</text>
+<text x="855" y="158.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#95622C">REPAIR AND HUMAN HANDLING</text>
+<rect x="405" y="300" width="380" height="184" rx="5" fill="#F6FAFC" stroke="#94AFBF" stroke-width="0.9" stroke-dasharray="5,4"/>
+<text x="425" y="312.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="700" fill="#315F79">Stage 1: Understand</text>
+<text x="425" y="326.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="700" fill="#315F79">and triage</text>
+<g id="edge-START-INPUT" class="semantic-edge" data-from="START" data-to="INPUT" data-label="" data-via="">
+<title>START to INPUT</title>
+<path d="M595,202 L595,223" fill="none" stroke="#315F79" stroke-width="1.55" stroke-linejoin="round"/>
+<polygon points="595,223 592.145676828583,216.60837741781384 597.854323171417,216.60837741781384" fill="#315F79" stroke="#315F79" stroke-width="0.4"/>
+</g>
+<g id="edge-INPUT-AI1" class="semantic-edge" data-from="INPUT" data-to="AI1" data-label="" data-via="">
+<title>INPUT to AI1</title>
+<path d="M595,277 L595,333" fill="none" stroke="#315F79" stroke-width="1.55" stroke-linejoin="round"/>
+<polygon points="595,333 592.145676828583,326.60837741781387 597.854323171417,326.6083774178138" fill="#315F79" stroke="#315F79" stroke-width="0.4"/>
+</g>
+<g id="edge-AI1-CHECK1" class="semantic-edge" data-from="AI1" data-to="CHECK1" data-label="" data-via="">
+<title>AI1 to CHECK1</title>
+<path d="M595,409 L595,418" fill="none" stroke="#315F79" stroke-width="1.55" stroke-linejoin="round"/>
+<polygon points="595,418 592.145676828583,411.60837741781387 597.854323171417,411.6083774178138" fill="#315F79" stroke="#315F79" stroke-width="0.4"/>
+</g>
+<g id="edge-CHECK1-ROUTE" class="semantic-edge" data-from="CHECK1" data-to="ROUTE" data-label="" data-via="">
+<title>CHECK1 to ROUTE</title>
+<path d="M595,466 L595,500" fill="none" stroke="#315F79" stroke-width="1.55" stroke-linejoin="round"/>
+<polygon points="595,500 592.145676828583,493.60837741781387 597.854323171417,493.6083774178138" fill="#315F79" stroke="#315F79" stroke-width="0.4"/>
+</g>
+<g id="edge-ROUTE-HUMAN" class="semantic-edge" data-from="ROUTE" data-to="HUMAN" data-label="Human requested, risk or analysis failure" data-via="H">
+<title>ROUTE to HUMAN: Human requested, risk or analysis failure</title>
+<path d="M685,535 L985,535" fill="none" stroke="#95622C" stroke-width="1.55" stroke-linejoin="round"/>
+<polygon points="985,535 978.6083774178138,537.854323171417 978.6083774178138,532.145676828583" fill="#95622C" stroke="#95622C" stroke-width="0.4"/>
+</g>
+<g id="edge-ROUTE-ASK" class="semantic-edge" data-from="ROUTE" data-to="ASK" data-label="Missing required customer information" data-via="">
+<title>ROUTE to ASK: Missing required customer information</title>
+<path d="M505,535 L330,535" fill="none" stroke="#397995" stroke-width="1.55" stroke-linejoin="round"/>
+<polygon points="330,535 336.39162258218613,532.145676828583 336.3916225821862,537.854323171417" fill="#397995" stroke="#397995" stroke-width="0.4"/>
+</g>
+<g id="edge-ROUTE-SEARCH" class="semantic-edge" data-from="ROUTE" data-to="SEARCH" data-label="Can proceed" data-via="">
+<title>ROUTE to SEARCH: Can proceed</title>
+<path d="M595,570 L595,600" fill="none" stroke="#315F79" stroke-width="1.55" stroke-linejoin="round"/>
+<polygon points="595,600 592.145676828583,593.6083774178138 597.854323171417,593.6083774178138" fill="#315F79" stroke="#315F79" stroke-width="0.4"/>
+</g>
+<g id="edge-SEARCH-EMPTY" class="semantic-edge" data-from="SEARCH" data-to="EMPTY" data-label="" data-via="">
+<title>SEARCH to EMPTY</title>
+<path d="M595,648 L595,673" fill="none" stroke="#315F79" stroke-width="1.55" stroke-linejoin="round"/>
+<polygon points="595,673 592.145676828583,666.6083774178138 597.854323171417,666.6083774178138" fill="#315F79" stroke="#315F79" stroke-width="0.4"/>
+</g>
+<g id="edge-EMPTY-GAP" class="semantic-edge" data-from="EMPTY" data-to="GAP" data-label="Yes" data-via="">
+<title>EMPTY to GAP: Yes</title>
+<path d="M690,708 L855,708" fill="none" stroke="#315F79" stroke-width="1.55" stroke-linejoin="round"/>
+<polygon points="855,708 848.6083774178138,710.854323171417 848.6083774178138,705.145676828583" fill="#315F79" stroke="#315F79" stroke-width="0.4"/>
+</g>
+<g id="edge-GAP-HUMAN" class="semantic-edge" data-from="GAP" data-to="HUMAN" data-label="" data-via="H">
+<title>GAP to HUMAN</title>
+<path d="M995,743 L995,770" fill="none" stroke="#95622C" stroke-width="1.55" stroke-linejoin="round"/>
+<polygon points="995,770 992.145676828583,763.6083774178138 997.854323171417,763.6083774178138" fill="#95622C" stroke="#95622C" stroke-width="0.4"/>
+</g>
+<g id="edge-EMPTY-AI2" class="semantic-edge" data-from="EMPTY" data-to="AI2" data-label="No" data-via="">
+<title>EMPTY to AI2: No</title>
+<path d="M595,743 L595,769" fill="none" stroke="#315F79" stroke-width="1.55" stroke-linejoin="round"/>
+<polygon points="595,769 592.145676828583,762.6083774178138 597.854323171417,762.6083774178138" fill="#315F79" stroke="#315F79" stroke-width="0.4"/>
+</g>
+<g id="edge-AI2-ASK" class="semantic-edge" data-from="AI2" data-to="ASK" data-label="Need customer information" data-via="C">
+<title>AI2 to ASK: Need customer information</title>
+<path d="M425,803 L390,803 L390,850 L380,850" fill="none" stroke="#397995" stroke-width="1.55" stroke-linejoin="round"/>
+<polygon points="380,850 386.39162258218613,847.145676828583 386.3916225821862,852.854323171417" fill="#397995" stroke="#397995" stroke-width="0.4"/>
+</g>
+<g id="edge-AI2-HUMAN" class="semantic-edge" data-from="AI2" data-to="HUMAN" data-label="Insufficient or conflicting evidence, or risk" data-via="H">
+<title>AI2 to HUMAN: Insufficient or conflicting evidence, or risk</title>
+<path d="M765,803 L1095,803" fill="none" stroke="#95622C" stroke-width="1.55" stroke-linejoin="round"/>
+<polygon points="1095,803 1088.608377417814,805.854323171417 1088.608377417814,800.145676828583" fill="#95622C" stroke="#95622C" stroke-width="0.4"/>
+</g>
+<g id="edge-AI2-VALIDATE" class="semantic-edge" data-from="AI2" data-to="VALIDATE" data-label="Actionable draft produced" data-via="">
+<title>AI2 to VALIDATE: Actionable draft produced</title>
+<path d="M595,837 L595,881" fill="none" stroke="#315F79" stroke-width="1.55" stroke-linejoin="round"/>
+<polygon points="595,881 592.145676828583,874.6083774178138 597.854323171417,874.6083774178138" fill="#315F79" stroke="#315F79" stroke-width="0.4"/>
+</g>
+<g id="edge-VALIDATE-RETRY" class="semantic-edge" data-from="VALIDATE" data-to="RETRY" data-label="Fail" data-via="">
+<title>VALIDATE to RETRY: Fail</title>
+<path d="M765,909 L835,909 L835,925 L865,925" fill="none" stroke="#76618D" stroke-width="1.55" stroke-linejoin="round"/>
+<polygon points="865,925 858.6083774178138,927.854323171417 858.6083774178138,922.145676828583" fill="#76618D" stroke="#76618D" stroke-width="0.4"/>
+</g>
+<g id="edge-RETRY-FEEDBACK" class="semantic-edge" data-from="RETRY" data-to="FEEDBACK" data-label="Yes: log error and retry count" data-via="">
+<title>RETRY to FEEDBACK: Yes: log error and retry count</title>
+<path d="M995,980 L995,1024" fill="none" stroke="#76618D" stroke-width="1.55" stroke-linejoin="round"/>
+<polygon points="995,1024 992.145676828583,1017.6083774178138 997.854323171417,1017.6083774178138" fill="#76618D" stroke="#76618D" stroke-width="0.4"/>
+</g>
+<g id="edge-FEEDBACK-AI2" class="semantic-edge" data-from="FEEDBACK" data-to="AI2" data-label="" data-via="">
+<title>FEEDBACK to AI2</title>
+<path d="M1135,1055 L1160,1055 L1160,850 L790,850 L790,824 L765,824" fill="none" stroke="#76618D" stroke-width="1.55" stroke-linejoin="round"/>
+<polygon points="765,824 771.3916225821862,821.145676828583 771.3916225821862,826.854323171417" fill="#76618D" stroke="#76618D" stroke-width="0.4"/>
+</g>
+<g id="edge-RETRY-HUMAN" class="semantic-edge" data-from="RETRY" data-to="HUMAN" data-label="No" data-via="H">
+<title>RETRY to HUMAN: No</title>
+<path d="M1125,925 L1142,925 L1142,975" fill="none" stroke="#95622C" stroke-width="1.55" stroke-linejoin="round"/>
+<polygon points="1142,975 1139.145676828583,968.6083774178138 1144.854323171417,968.6083774178138" fill="#95622C" stroke="#95622C" stroke-width="0.4"/>
+</g>
+<g id="edge-VALIDATE-REVIEW" class="semantic-edge" data-from="VALIDATE" data-to="REVIEW" data-label="Pass" data-via="">
+<title>VALIDATE to REVIEW: Pass</title>
+<path d="M595,937 L595,1011" fill="none" stroke="#315F79" stroke-width="1.55" stroke-linejoin="round"/>
+<polygon points="595,1011 592.145676828583,1004.6083774178138 597.854323171417,1004.6083774178138" fill="#315F79" stroke="#315F79" stroke-width="0.4"/>
+</g>
+<g id="edge-ASK-ASKCHECK" class="semantic-edge" data-from="ASK" data-to="ASKCHECK" data-label="" data-via="">
+<title>ASK to ASKCHECK</title>
+<path d="M190,565 L190,615" fill="none" stroke="#397995" stroke-width="1.55" stroke-linejoin="round"/>
+<polygon points="190,615 187.14567682858302,608.6083774178138 192.85432317141698,608.6083774178138" fill="#397995" stroke="#397995" stroke-width="0.4"/>
+</g>
+<g id="edge-ASKCHECK-HUMAN" class="semantic-edge" data-from="ASKCHECK" data-to="HUMAN" data-label="Fail or human judgment needed" data-via="H">
+<title>ASKCHECK to HUMAN: Fail or human judgment needed</title>
+<path d="M320,665 L370,665" fill="none" stroke="#95622C" stroke-width="1.55" stroke-linejoin="round"/>
+<polygon points="370,665 363.60837741781387,667.854323171417 363.60837741781387,662.145676828583" fill="#95622C" stroke="#95622C" stroke-width="0.4"/>
+</g>
+<g id="edge-ASKCHECK-SEND" class="semantic-edge" data-from="ASKCHECK" data-to="SEND" data-label="Pass" data-via="">
+<title>ASKCHECK to SEND: Pass</title>
+<path d="M190,715 L190,766" fill="none" stroke="#397995" stroke-width="1.55" stroke-linejoin="round"/>
+<polygon points="190,766 187.14567682858302,759.6083774178138 192.85432317141698,759.6083774178138" fill="#397995" stroke="#397995" stroke-width="0.4"/>
+</g>
+<g id="edge-SEND-WAIT" class="semantic-edge" data-from="SEND" data-to="WAIT" data-label="" data-via="">
+<title>SEND to WAIT</title>
+<path d="M190,824 L190,872" fill="none" stroke="#397995" stroke-width="1.55" stroke-linejoin="round"/>
+<polygon points="190,872 187.14567682858302,865.6083774178138 192.85432317141698,865.6083774178138" fill="#397995" stroke="#397995" stroke-width="0.4"/>
+</g>
+<g id="edge-WAIT-MERGE" class="semantic-edge" data-from="WAIT" data-to="MERGE" data-label="" data-via="">
+<title>WAIT to MERGE</title>
+<path d="M190,918 L190,964" fill="none" stroke="#397995" stroke-width="1.55" stroke-linejoin="round"/>
+<polygon points="190,964 187.14567682858302,957.6083774178138 192.85432317141698,957.6083774178138" fill="#397995" stroke="#397995" stroke-width="0.4"/>
+</g>
+<g id="edge-MERGE-INPUT" class="semantic-edge" data-from="MERGE" data-to="INPUT" data-label="" data-via="">
+<title>MERGE to INPUT</title>
+<path d="M50,995 L25,995 L25,250 L425,250" fill="none" stroke="#397995" stroke-width="1.55" stroke-linejoin="round"/>
+<polygon points="425,250 418.60837741781387,252.85432317141698 418.60837741781387,247.14567682858302" fill="#397995" stroke="#397995" stroke-width="0.4"/>
+</g>
+<g id="edge-HUMAN-REVIEW" class="semantic-edge" data-from="HUMAN" data-to="REVIEW" data-label="" data-via="">
+<title>HUMAN to REVIEW</title>
+<path d="M855,1175 L815,1175 L815,1035 L765,1035" fill="none" stroke="#95622C" stroke-width="1.55" stroke-linejoin="round"/>
+<polygon points="765,1035 771.3916225821862,1032.145676828583 771.3916225821862,1037.854323171417" fill="#95622C" stroke="#95622C" stroke-width="0.4"/>
+</g>
+<g id="edge-REVIEW-APPROVE" class="semantic-edge" data-from="REVIEW" data-to="APPROVE" data-label="" data-via="">
+<title>REVIEW to APPROVE</title>
+<path d="M595,1059 L595,1088" fill="none" stroke="#315F79" stroke-width="1.55" stroke-linejoin="round"/>
+<polygon points="595,1088 592.145676828583,1081.608377417814 597.854323171417,1081.608377417814" fill="#315F79" stroke="#315F79" stroke-width="0.4"/>
+</g>
+<g id="edge-APPROVE-HOLD" class="semantic-edge" data-from="APPROVE" data-to="HOLD" data-label="No" data-via="">
+<title>APPROVE to HOLD: No</title>
+<path d="M490,1124 L330,1124" fill="none" stroke="#526575" stroke-width="1.55" stroke-linejoin="round"/>
+<polygon points="330,1124 336.39162258218613,1121.145676828583 336.3916225821862,1126.854323171417" fill="#526575" stroke="#526575" stroke-width="0.4"/>
+</g>
+<g id="edge-APPROVE-SAVE" class="semantic-edge" data-from="APPROVE" data-to="SAVE" data-label="Yes" data-via="">
+<title>APPROVE to SAVE: Yes</title>
+<path d="M595,1160 L595,1183" fill="none" stroke="#315F79" stroke-width="1.55" stroke-linejoin="round"/>
+<polygon points="595,1183 592.145676828583,1176.608377417814 597.854323171417,1176.608377417814" fill="#315F79" stroke="#315F79" stroke-width="0.4"/>
+</g>
+<g id="edge-SAVE-SENDANSWER" class="semantic-edge" data-from="SAVE" data-to="SENDANSWER" data-label="" data-via="">
+<title>SAVE to SENDANSWER</title>
+<path d="M595,1235 L595,1266" fill="none" stroke="#315F79" stroke-width="1.55" stroke-linejoin="round"/>
+<polygon points="595,1266 592.145676828583,1259.608377417814 597.854323171417,1259.608377417814" fill="#315F79" stroke="#315F79" stroke-width="0.4"/>
+</g>
+<g id="edge-SENDANSWER-SENT" class="semantic-edge" data-from="SENDANSWER" data-to="SENT" data-label="" data-via="">
+<title>SENDANSWER to SENT</title>
+<path d="M595,1326 L595,1351" fill="none" stroke="#315F79" stroke-width="1.55" stroke-linejoin="round"/>
+<polygon points="595,1351 592.145676828583,1344.608377417814 597.854323171417,1344.608377417814" fill="#315F79" stroke="#315F79" stroke-width="0.4"/>
+</g>
+<g id="edge-SENT-DONE" class="semantic-edge" data-from="SENT" data-to="DONE" data-label="Success" data-via="">
+<title>SENT to DONE: Success</title>
+<path d="M595,1427 L595,1462" fill="none" stroke="#315F79" stroke-width="1.55" stroke-linejoin="round"/>
+<polygon points="595,1462 592.145676828583,1455.608377417814 597.854323171417,1455.608377417814" fill="#315F79" stroke="#315F79" stroke-width="0.4"/>
+</g>
+<g id="edge-SENT-SENDFAIL" class="semantic-edge" data-from="SENT" data-to="SENDFAIL" data-label="Failed or unknown" data-via="">
+<title>SENT to SENDFAIL: Failed or unknown</title>
+<path d="M695,1389 L855,1389" fill="none" stroke="#526575" stroke-width="1.55" stroke-linejoin="round"/>
+<polygon points="855,1389 848.6083774178138,1391.854323171417 848.6083774178138,1386.145676828583" fill="#526575" stroke="#526575" stroke-width="0.4"/>
+</g>
+<g id="on-page-connectors" data-role="same-page-continuation">
+<path d="M190,487 L190,505" fill="none" stroke="#397995" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="190,505 187.14567682858302,498.60837741781387 192.85432317141698,498.6083774178138" fill="#397995" stroke="#397995" stroke-width="0.4"/>
+<path d="M995,1115 L995,1147" fill="none" stroke="#95622C" stroke-width="1.5" stroke-linejoin="round"/>
+<polygon points="995,1147 992.145676828583,1140.608377417814 997.854323171417,1140.608377417814" fill="#95622C" stroke="#95622C" stroke-width="0.4"/>
+<circle cx="995" cy="535" r="10" fill="#95622C" stroke="#95622C"/>
+<text x="995" y="538.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF">H</text>
+<circle cx="995" cy="780" r="10" fill="#95622C" stroke="#95622C"/>
+<text x="995" y="783.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF">H</text>
+<circle cx="1105" cy="803" r="10" fill="#95622C" stroke="#95622C"/>
+<text x="1105" y="806.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF">H</text>
+<circle cx="1142" cy="985" r="10" fill="#95622C" stroke="#95622C"/>
+<text x="1142" y="988.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF">H</text>
+<circle cx="380" cy="665" r="10" fill="#95622C" stroke="#95622C"/>
+<text x="380" y="668.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF">H</text>
+<circle cx="370" cy="850" r="10" fill="#397995" stroke="#397995"/>
+<text x="370" y="853.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF">C</text>
+<circle cx="190" cy="477" r="10" fill="#397995" stroke="#397995"/>
+<text x="190" y="480.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF">C</text>
+<circle cx="995" cy="1105" r="10" fill="#95622C" stroke="#95622C"/>
+<text x="995" y="1108.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF">H</text>
+</g>
+<g id="node-START" class="semantic-node" data-label="Receive email" data-shape="terminal">
+<title>Receive email</title>
+<rect x="488.0" y="168.0" width="214" height="34" rx="17.0" fill="#EDF4F7" stroke="#315F79" stroke-width="1.2"/>
+<text x="595" y="189.59" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="700" fill="#193040">Receive email</text>
+</g>
+<g id="node-INPUT" class="semantic-node" data-label="Check input format and restore conversation context" data-shape="process">
+<title>Check input format and restore conversation context</title>
+<rect x="425.0" y="223.0" width="340" height="54" rx="3" fill="#FFFFFF" stroke="#889AA7" stroke-width="1.2"/>
+<text x="595" y="246.1525" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="400" fill="#193040">Check input format and restore</text>
+<text x="595" y="263.02750000000003" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="400" fill="#193040">conversation context</text>
+</g>
+<g id="node-AI1" class="semantic-node" data-label="One LLM call: human request, multiple intents, risk, missing information, search direction" data-shape="process">
+<title>One LLM call: human request, multiple intents, risk, missing information, search direction</title>
+<rect x="425.0" y="333.0" width="340" height="76" rx="3" fill="#EAF3F8" stroke="#315F79" stroke-width="1.2"/>
+<text x="595" y="358.988" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.2" font-weight="400" fill="#193040">One LLM call: human request,</text>
+<text x="595" y="375.488" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.2" font-weight="400" fill="#193040">multiple intents, risk,</text>
+<text x="595" y="391.988" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.2" font-weight="400" fill="#193040">missing information, search direction</text>
+</g>
+<g id="node-CHECK1" class="semantic-node" data-label="Program validates analysis and enforces routing constraints" data-shape="process">
+<title>Program validates analysis and enforces routing constraints</title>
+<rect x="425.0" y="418.0" width="340" height="48" rx="3" fill="#FFFFFF" stroke="#889AA7" stroke-width="1.2"/>
+<text x="595" y="438.1525" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="400" fill="#193040">Program validates analysis and</text>
+<text x="595" y="455.0275" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="400" fill="#193040">enforces routing constraints</text>
+</g>
+<g id="node-ROUTE" class="semantic-node" data-label="Next step" data-shape="decision">
+<title>Next step</title>
+<polygon points="595,500.0 685.0,535 595,570.0 505.0,535" fill="#FFFFFF" stroke="#889AA7" stroke-width="1.2"/>
+<text x="595" y="539.76" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#193040">Next step</text>
+</g>
+<g id="node-SEARCH" class="semantic-node" data-label="Retrieve relevant knowledge passages" data-shape="process">
+<title>Retrieve relevant knowledge passages</title>
+<rect x="425.0" y="600.0" width="340" height="48" rx="3" fill="#FFFFFF" stroke="#889AA7" stroke-width="1.2"/>
+<text x="595" y="628.59" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="400" fill="#193040">Retrieve relevant knowledge passages</text>
+</g>
+<g id="node-EMPTY" class="semantic-node" data-label="Retrieval empty?" data-shape="decision">
+<title>Retrieval empty?</title>
+<polygon points="595,673.0 690.0,708 595,743.0 500.0,708" fill="#FFFFFF" stroke="#889AA7" stroke-width="1.2"/>
+<text x="595" y="712.59" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="400" fill="#193040">Retrieval empty?</text>
+</g>
+<g id="node-AI2" class="semantic-node" data-label="Stage 2: One LLM call to assess evidence applicability and draft" data-shape="process">
+<title>Stage 2: One LLM call to assess evidence applicability and draft</title>
+<rect x="425.0" y="769.0" width="340" height="68" rx="3" fill="#EAF3F8" stroke="#315F79" stroke-width="1.2"/>
+<text x="595" y="799.1525" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="400" fill="#193040">Stage 2: One LLM call to assess</text>
+<text x="595" y="816.0275" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="400" fill="#193040">evidence applicability and draft</text>
+</g>
+<g id="node-VALIDATE" class="semantic-node" data-label="Program checks format, citations and fixed constraints" data-shape="process">
+<title>Program checks format, citations and fixed constraints</title>
+<rect x="425.0" y="881.0" width="340" height="56" rx="3" fill="#FFFFFF" stroke="#889AA7" stroke-width="1.2"/>
+<text x="595" y="905.1525" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="400" fill="#193040">Program checks format, citations</text>
+<text x="595" y="922.0275" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="400" fill="#193040">and fixed constraints</text>
+</g>
+<g id="node-REVIEW" class="semantic-node" data-label="Support reviews and edits" data-shape="process">
+<title>Support reviews and edits</title>
+<rect x="425.0" y="1011.0" width="340" height="48" rx="3" fill="#FCF7EE" stroke="#95622C" stroke-width="1.2"/>
+<text x="595" y="1039.59" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="400" fill="#193040">Support reviews and edits</text>
+</g>
+<g id="node-APPROVE" class="semantic-node" data-label="Support approves sending?" data-shape="decision">
+<title>Support approves sending?</title>
+<polygon points="595,1088.0 700.0,1124 595,1160.0 490.0,1124" fill="#FCF7EE" stroke="#95622C" stroke-width="1.2"/>
+<text x="595" y="1120.1525" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="400" fill="#193040">Support approves</text>
+<text x="595" y="1137.0275" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="400" fill="#193040">sending?</text>
+</g>
+<g id="node-SAVE" class="semantic-node" data-label="Save approved final text and review record" data-shape="process">
+<title>Save approved final text and review record</title>
+<rect x="425.0" y="1183.0" width="340" height="52" rx="3" fill="#FFFFFF" stroke="#889AA7" stroke-width="1.2"/>
+<text x="595" y="1205.1525" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="400" fill="#193040">Save approved final text</text>
+<text x="595" y="1222.0275" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="400" fill="#193040">and review record</text>
+</g>
+<g id="node-SENDANSWER" class="semantic-node" data-label="Send the approved email to the customer: target integration" data-shape="process">
+<title>Send the approved email to the customer: target integration</title>
+<rect x="425.0" y="1266.0" width="340" height="60" rx="3" fill="#FFFFFF" stroke="#889AA7" stroke-width="1.2"/>
+<text x="595" y="1292.1525" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="400" fill="#193040">Send the approved email to the</text>
+<text x="595" y="1309.0275" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="400" fill="#193040">customer: target integration</text>
+</g>
+<g id="node-SENT" class="semantic-node" data-label="Delivery service result" data-shape="decision">
+<title>Delivery service result</title>
+<polygon points="595,1351.0 695.0,1389 595,1427.0 495.0,1389" fill="#FFFFFF" stroke="#889AA7" stroke-width="1.2"/>
+<text x="595" y="1385.1525" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="400" fill="#193040">Delivery service</text>
+<text x="595" y="1402.0275" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="400" fill="#193040">result</text>
+</g>
+<g id="node-DONE" class="semantic-node" data-label="Save sent status and delivery receipt" data-shape="terminal">
+<title>Save sent status and delivery receipt</title>
+<rect x="425.0" y="1462.0" width="340" height="44" rx="22.0" fill="#EDF4F7" stroke="#315F79" stroke-width="1.2"/>
+<text x="595" y="1488.59" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="400" fill="#193040">Save sent status and delivery receipt</text>
+</g>
+<g id="node-ASK" class="semantic-node" data-label="AI prepares a specific clarification question" data-shape="process">
+<title>AI prepares a specific clarification question</title>
+<rect x="50.0" y="505.0" width="280" height="60" rx="3" fill="#F3F8FB" stroke="#397995" stroke-width="1.2"/>
+<text x="190" y="531.1525" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="400" fill="#193040">AI prepares a specific</text>
+<text x="190" y="548.0275" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="400" fill="#193040">clarification question</text>
+</g>
+<g id="node-ASKCHECK" class="semantic-node" data-label="Program checks clarification question" data-shape="decision">
+<title>Program checks clarification question</title>
+<polygon points="190,615.0 320.0,665 190,715.0 60.0,665" fill="#F3F8FB" stroke="#397995" stroke-width="1.2"/>
+<text x="190" y="661.238" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.2" font-weight="400" fill="#193040">Program checks</text>
+<text x="190" y="677.738" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.2" font-weight="400" fill="#193040">clarification question</text>
+</g>
+<g id="node-SEND" class="semantic-node" data-label="Automatically send clarification: target integration" data-shape="process">
+<title>Automatically send clarification: target integration</title>
+<rect x="50.0" y="766.0" width="280" height="58" rx="3" fill="#F3F8FB" stroke="#397995" stroke-width="1.2"/>
+<text x="190" y="791.238" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.2" font-weight="400" fill="#193040">Automatically send clarification:</text>
+<text x="190" y="807.738" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.2" font-weight="400" fill="#193040">target integration</text>
+</g>
+<g id="node-WAIT" class="semantic-node" data-label="Wait for customer reply" data-shape="process">
+<title>Wait for customer reply</title>
+<rect x="50.0" y="872.0" width="280" height="46" rx="3" fill="#F3F8FB" stroke="#397995" stroke-width="1.2"/>
+<text x="190" y="899.59" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="400" fill="#193040">Wait for customer reply</text>
+</g>
+<g id="node-MERGE" class="semantic-node" data-label="Merge original email, question and new reply" data-shape="process">
+<title>Merge original email, question and new reply</title>
+<rect x="50.0" y="964.0" width="280" height="62" rx="3" fill="#F3F8FB" stroke="#397995" stroke-width="1.2"/>
+<text x="190" y="991.1525" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="400" fill="#193040">Merge original email, question</text>
+<text x="190" y="1008.0275" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="400" fill="#193040">and new reply</text>
+</g>
+<g id="node-HOLD" class="semantic-node" data-label="Save edits or rejection record; do not send" data-shape="process">
+<title>Save edits or rejection record; do not send</title>
+<rect x="50.0" y="1093.0" width="280" height="62" rx="3" fill="#FFFFFF" stroke="#889AA7" stroke-width="1.2"/>
+<text x="190" y="1120.1525" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="400" fill="#193040">Save edits or rejection record;</text>
+<text x="190" y="1137.0275" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="400" fill="#193040">do not send</text>
+</g>
+<g id="node-GAP" class="semantic-node" data-label="Seek additional approved sources or hand off" data-shape="process">
+<title>Seek additional approved sources or hand off</title>
+<rect x="855.0" y="673.0" width="280" height="70" rx="3" fill="#FFFFFF" stroke="#889AA7" stroke-width="1.2"/>
+<text x="995" y="704.1525" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="400" fill="#193040">Seek additional approved</text>
+<text x="995" y="721.0275" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="400" fill="#193040">sources or hand off</text>
+</g>
+<g id="node-RETRY" class="semantic-node" data-label="Repairable and fewer than 3 retries?" data-shape="decision">
+<title>Repairable and fewer than 3 retries?</title>
+<polygon points="995,870.0 1125.0,925 995,980.0 865.0,925" fill="#F7F4FA" stroke="#76618D" stroke-width="1.2"/>
+<text x="995" y="921.238" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.2" font-weight="400" fill="#193040">Repairable and fewer</text>
+<text x="995" y="937.738" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.2" font-weight="400" fill="#193040">than 3 retries?</text>
+</g>
+<g id="node-FEEDBACK" class="semantic-node" data-label="Keep evidence and constraints; add error feedback" data-shape="process">
+<title>Keep evidence and constraints; add error feedback</title>
+<rect x="855.0" y="1024.0" width="280" height="62" rx="3" fill="#F7F4FA" stroke="#76618D" stroke-width="1.2"/>
+<text x="995" y="1051.1525" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="400" fill="#193040">Keep evidence and constraints;</text>
+<text x="995" y="1068.0275" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="400" fill="#193040">add error feedback</text>
+</g>
+<g id="node-HUMAN" class="semantic-node" data-label="Human handling" data-shape="process">
+<title>Human handling</title>
+<rect x="855.0" y="1147.0" width="280" height="56" rx="3" fill="#FCF7EE" stroke="#95622C" stroke-width="1.2"/>
+<text x="995" y="1179.76" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#193040">Human handling</text>
+</g>
+<g id="node-SENDFAIL" class="semantic-node" data-label="Record failed or uncertain delivery; support checks" data-shape="process">
+<title>Record failed or uncertain delivery; support checks</title>
+<rect x="855.0" y="1359.0" width="280" height="60" rx="3" fill="#FFFFFF" stroke="#889AA7" stroke-width="1.2"/>
+<text x="995" y="1385.1525" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="400" fill="#193040">Record failed or uncertain</text>
+<text x="995" y="1402.0275" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="400" fill="#193040">delivery; support checks</text>
+</g>
+<g class="branch-label" data-for="edge-ROUTE-HUMAN">
+<rect x="776.669677734375" y="496.0" width="116.66064453125" height="16" fill="white"/>
+<text x="835" y="509.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#193040">Human requested, risk</text>
+<rect x="789.203125" y="509.5" width="91.59375" height="16" fill="white"/>
+<text x="835" y="522.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#193040">or analysis failure</text>
+</g>
+<g class="branch-label" data-for="edge-ROUTE-ASK">
+<rect x="366.649658203125" y="497.0" width="86.70068359375" height="16" fill="white"/>
+<text x="410" y="510.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#193040">Missing required</text>
+<rect x="355.64697265625" y="510.5" width="108.7060546875" height="16" fill="white"/>
+<text x="410" y="523.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#193040">customer information</text>
+</g>
+<g class="branch-label" data-for="edge-ROUTE-SEARCH">
+<rect x="614.506591796875" y="576.0" width="68.98681640625" height="16" fill="white"/>
+<text x="649" y="589.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#193040">Can proceed</text>
+</g>
+<g class="branch-label" data-for="edge-EMPTY-GAP">
+<rect x="762.522705078125" y="684.0" width="24.95458984375" height="16" fill="white"/>
+<text x="775" y="697.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#193040">Yes</text>
+</g>
+<g class="branch-label" data-for="edge-EMPTY-AI2">
+<rect x="606.96923828125" y="748.0" width="20.0615234375" height="16" fill="white"/>
+<text x="617" y="761.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#193040">No</text>
+</g>
+<g class="branch-label" data-for="edge-AI2-ASK">
+<rect x="254.705810546875" y="829.0" width="80.58837890625" height="16" fill="white"/>
+<text x="295" y="842.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#193040">Need customer</text>
+<rect x="264.792724609375" y="842.5" width="60.41455078125" height="16" fill="white"/>
+<text x="295" y="855.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#193040">information</text>
+</g>
+<g class="branch-label" data-for="edge-AI2-HUMAN">
+<rect x="868.3046875" y="810.0" width="123.390625" height="16" fill="white"/>
+<text x="930" y="823.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#193040">Insufficient or conflicting</text>
+<rect x="886.955810546875" y="823.5" width="86.08837890625" height="16" fill="white"/>
+<text x="930" y="836.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#193040">evidence, or risk</text>
+</g>
+<g class="branch-label" data-for="edge-AI2-VALIDATE">
+<rect x="621.3193359375" y="848.0" width="131.361328125" height="16" fill="white"/>
+<text x="687" y="861.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#193040">Actionable draft produced</text>
+</g>
+<g class="branch-label" data-for="edge-VALIDATE-RETRY">
+<rect x="791.1376953125" y="885.0" width="23.724609375" height="16" fill="white"/>
+<text x="803" y="898.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#193040">Fail</text>
+</g>
+<g class="branch-label" data-for="edge-RETRY-FEEDBACK">
+<rect x="920.771240234375" y="987.0" width="148.45751953125" height="16" fill="white"/>
+<text x="995" y="1000.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#193040">Yes: log error and retry count</text>
+</g>
+<g class="branch-label" data-for="edge-RETRY-HUMAN">
+<rect x="1117.96923828125" y="945.0" width="20.0615234375" height="16" fill="white"/>
+<text x="1128" y="958.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#193040">No</text>
+</g>
+<g class="branch-label" data-for="edge-VALIDATE-REVIEW">
+<rect x="603.772705078125" y="965.0" width="30.45458984375" height="16" fill="white"/>
+<text x="619" y="978.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#193040">Pass</text>
+</g>
+<g class="branch-label" data-for="edge-ASKCHECK-HUMAN">
+<rect x="329.374267578125" y="689.0" width="73.25146484375" height="16" fill="white"/>
+<text x="366" y="702.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#193040">Fail or human</text>
+<rect x="320.4931640625" y="702.5" width="91.013671875" height="16" fill="white"/>
+<text x="366" y="715.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#193040">judgment needed</text>
+</g>
+<g class="branch-label" data-for="edge-ASKCHECK-SEND">
+<rect x="200.772705078125" y="734.0" width="30.45458984375" height="16" fill="white"/>
+<text x="216" y="747.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#193040">Pass</text>
+</g>
+<g class="branch-label" data-for="edge-APPROVE-HOLD">
+<rect x="401.96923828125" y="1100.0" width="20.0615234375" height="16" fill="white"/>
+<text x="412" y="1113.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#193040">No</text>
+</g>
+<g class="branch-label" data-for="edge-APPROVE-SAVE">
+<rect x="605.522705078125" y="1163.0" width="24.95458984375" height="16" fill="white"/>
+<text x="618" y="1176.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#193040">Yes</text>
+</g>
+<g class="branch-label" data-for="edge-SENT-DONE">
+<rect x="604.2138671875" y="1434.0" width="47.572265625" height="16" fill="white"/>
+<text x="628" y="1447.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#193040">Success</text>
+</g>
+<g class="branch-label" data-for="edge-SENT-SENDFAIL">
+<rect x="729.057373046875" y="1365.0" width="95.88525390625" height="16" fill="white"/>
+<text x="777" y="1378.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#193040">Failed or unknown</text>
+</g>
+<text x="855" y="1230.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#95622C">Human handling precedes review.</text>
+<text x="855" y="1246.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#95622C">It does not approve a reply.</text>
+<text x="855" y="1300.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#76618D">Repair limit</text>
+<text x="855" y="1317.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#76618D">1 initial draft + up to 3 repairs</text>
+<text x="855" y="1333.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#76618D">= 4 draft attempts maximum</text>
+<text x="855" y="1445.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#526575">Check an unknown result before</text>
+<text x="855" y="1461.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#526575">any resend to avoid duplicates.</text>
+<text x="50" y="1060.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#397995">Reply received: restore the full context</text>
+<text x="50" y="1076.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#397995">and run understanding and triage again.</text>
+<path d="M48,1542 L1143,1542" fill="none" stroke="#D5DEE5" stroke-width="0.9" stroke-linejoin="round"/>
+<text x="48" y="1568.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="700" fill="#526575">HOW TO READ</text>
+<circle cx="188" cy="1564" r="9" fill="#397995" stroke="#397995"/>
+<text x="188" y="1567.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">C</text>
+<text x="205" y="1568.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#526575">Continue at the C circle above clarification.</text>
+<circle cx="593" cy="1564" r="9" fill="#95622C" stroke="#95622C"/>
+<text x="593" y="1567.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">H</text>
+<text x="610" y="1568.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#526575">Continue at the H circle above Human handling.</text>
+<text x="48" y="1590.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#526575">All matching circles connect within this page. Rectangles are processes; diamonds are decisions.</text>
+<text x="48" y="1623.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="700" fill="#193040">PROTOTYPE BOUNDARY</text>
+<text x="48" y="1644.0" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#193040">The current prototype uses a TEST outbox only. Real customer email remains a target integration.</text>
+</svg>

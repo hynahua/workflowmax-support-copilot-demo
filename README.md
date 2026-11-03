@@ -34,17 +34,18 @@ The local navigation calls its conversation entry **Local practice workspace** a
 
 ## Workflow diagrams
 
-The colorful map helps remember the main stages and loops. It is a learning aid, not a complete topology specification.
+Use the single-page English interview diagram to follow the main path, clarification loop, repair loop and human handoff.
+
+- [English interview diagram PDF](diagrams/workflow-interview-english.pdf)
+- [English interview diagram SVG](diagrams/workflow-interview-english.svg)
+
+The [editable Mermaid source](diagrams/workflow-english.mmd) defines the same steps and branches. The Mermaid automatic layout is available as [PNG](diagrams/workflow-english.png) and [SVG](diagrams/workflow-english.svg).
+
+The colorful memory map helps you remember the main stages and loops.
 
 ![Color workflow memory map](diagrams/workflow-memory-map.png)
 
-The precise English flowchart preserves the detailed branches and decisions:
-
-- [English flowchart PNG](diagrams/workflow-english.png)
-- [English flowchart SVG](diagrams/workflow-english.svg)
-- [Editable Mermaid source](diagrams/workflow-english.mmd)
-
-The target diagram labels future delivery integrations; this prototype uses only a TEST outbox. The initial draft may be followed by at most three repair attempts. Programmatic format/citation checks do not prove factual support.
+The target diagram labels future delivery integrations. The prototype uses a TEST outbox. The initial draft may be followed by at most three repair attempts. Reviewers check whether the cited evidence supports the reply.
 
 ## Verify
 
